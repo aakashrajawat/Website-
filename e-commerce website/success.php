@@ -8,11 +8,12 @@ if(!isset($_SESSION))
 if (!isset($_SESSION['email'])) {
     header('location: index.php');
 }
-$user_id = $_SESSION['user_id'];
-$item_ids_string = $_GET['itemsid'];
 
+$user_id = $_SESSION['user_id'];
+$item_ids_string = $_SESSION['items_id'];
+//echo "userid=".$user_id."itemid=".$item_ids_string;
 //We will change the status of the items purchased by the user to 'Confirmed'
-$query = "UPDATE user_items SET status='Confirmed' WHERE user_id=" . $user_id . " AND item_id IN (" . $item_ids_string . ") and status='Added to cart'";
+$query = "UPDATE user_items SET status='Confirmed' WHERE user_id=  $user_id   and item_id IN (  $item_ids_string  ) and status='Added to cart'";
 mysqli_query($con, $query) or die(mysqli_error($con));
 ?>
 
