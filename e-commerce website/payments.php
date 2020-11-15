@@ -7,7 +7,7 @@ if(!isset($_SESSION))
 
 
 $item_ids_string = $_GET['itemsid'];
-//$_SESSION['transfer_user_id']=$user_id;
+
 $_SESSION['transfer_items_id']=$item_ids_string;
 ?>
 
